@@ -1,0 +1,15 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+fastapi = "~=0.88"
+uvicorn = "~=0.20"
+"sqlalchemy[asyncio]" = "~=1.4"
+aiomysql = "*"
+alembic = "*"
+python-dotenv = "*"
+
+[requires]
+python_version = "3"
