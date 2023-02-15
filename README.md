@@ -4,17 +4,17 @@ Sample application uses FastAPI + async SQLAlchemy + Alembic + Uvicorn
 ## Quickstart
 Install environment:
 ```shell
-$ pipenv install
+pipenv install
 ```
 
 Update `.env` file, then init database:
 ```shell
-$ alembic upgrade head
+alembic upgrade head
 ```
 
 Run the application:
 ```shell
-$ python3 run.py
+python3 run.py
 ```
 
 ---

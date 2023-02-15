@@ -4,11 +4,13 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [packages]
-fastapi = "~=0.88"
+fastapi = "~=0.92"
 uvicorn = "~=0.20"
 "sqlalchemy[asyncio]" = "~=1.4"
 aiomysql = "*"
 alembic = "*"
+pymysql = "*"
+cryptography = "*"
 python-dotenv = "*"
 
 [requires]

@@ -1,5 +1,3 @@
-from __future__ import with_statement
-
 import logging
 import sys
 from logging.config import fileConfig
@@ -10,7 +8,9 @@ from sqlalchemy import pool
 
 sys.path.append('')
 sys.path.append('..')
-from app.database.session import database_uri
+from app.core.settings import settings
+
+database_uri = f"mysql+pymysql://{settings.DB_USER}:{settings.DB_PASSWORD}@{settings.DB_HOST}:{settings.DB_PORT}/{settings.DB_NAME}?charset=utf8mb4"
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
