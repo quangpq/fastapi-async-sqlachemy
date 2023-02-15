@@ -8,7 +8,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from app.api import notes, errors
 from app.core.log import set_logger
 from app.core.settings import settings
-from app.database.session import SessionLocal, engine
+from app.database.session import engine
 
 set_logger(logger, settings.DEBUGGING)
 
@@ -71,7 +71,5 @@ async def validation_exception_handler(request, exc):
 
 @app.on_event("shutdown")
 async def shutdown_event():
-    SessionLocal.close_all()
-
     # Close aiomysql connections
     await engine.dispose()

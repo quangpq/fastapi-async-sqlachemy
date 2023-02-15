@@ -6,7 +6,7 @@ verify_ssl = true
 [packages]
 fastapi = "~=0.92"
 uvicorn = "~=0.20"
-"sqlalchemy[asyncio]" = "~=1.4"
+"sqlalchemy[asyncio]" = "~=2.0"
 aiomysql = "*"
 alembic = "*"
 pymysql = "*"
