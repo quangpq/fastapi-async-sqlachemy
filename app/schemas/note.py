@@ -1,13 +1,13 @@
-from datetime import datetime
 from typing import Optional
-from .base import CamelModel
+
+from .base import DateTime, CamelModel, ORMModel
 
 
 # Shared properties
 class NoteBase(CamelModel):
     title: str
     note: str
-    updated_at: Optional[datetime]
+    updated_at: Optional[DateTime] = None
 
 
 # Properties to receive on item creation
@@ -25,9 +25,6 @@ class NoteInDBBase(NoteBase):
 
 
 # Properties to return to client
-class Note(NoteInDBBase):
+class Note(NoteInDBBase, ORMModel):
     id: int
-    created_at: datetime
-
-    class Config:
-        orm_mode = True
+    created_at: DateTime

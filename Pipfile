@@ -4,8 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [packages]
-fastapi = "~=0.92"
-uvicorn = "~=0.20"
+"fastapi[all]" = "~=0.104"
+uvicorn = "~=0.24"
 "sqlalchemy[asyncio]" = "~=2.0"
 aiomysql = "*"
 alembic = "*"

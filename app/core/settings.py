@@ -1,9 +1,9 @@
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
     API_STR: str = "/api"
-    DEBUGGING = False
+    DEBUGGING: bool = False
 
     DB_USER: str = "admin"
     DB_PASSWORD: str = "12345678"
@@ -11,10 +11,12 @@ class Settings(BaseSettings):
     DB_PORT: int = 3306
     DB_NAME: str = "demo"
 
-    class Config:
-        env_file = ".env"
-        env_file_encoding = 'utf-8'
-        case_sensitive = True
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=True,
+        extra="ignore"
+    )
 
 
 settings = Settings()
